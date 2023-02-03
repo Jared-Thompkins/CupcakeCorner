@@ -11,6 +11,8 @@
 		DDA98EFA298BA7EA000545E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA98EF9298BA7EA000545E4 /* ContentView.swift */; };
 		DDA98EFC298BA7F1000545E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA98EFB298BA7F1000545E4 /* Assets.xcassets */; };
 		DDA98EFF298BA7F1000545E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA98EFE298BA7F1000545E4 /* Preview Assets.xcassets */; };
+		DDA98F08298D0A0D000545E4 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA98F07298D0A0D000545E4 /* Order.swift */; };
+		DDA98F0A298D12E7000545E4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA98F09298D12E7000545E4 /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		DDA98EF9298BA7EA000545E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DDA98EFB298BA7F1000545E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA98EFE298BA7F1000545E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDA98F07298D0A0D000545E4 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		DDA98F09298D12E7000545E4 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				DDA98EF7298BA7EA000545E4 /* CupcakeCornerApp.swift */,
 				DDA98EF9298BA7EA000545E4 /* ContentView.swift */,
+				DDA98F09298D12E7000545E4 /* AddressView.swift */,
+				DDA98F07298D0A0D000545E4 /* Order.swift */,
 				DDA98EFB298BA7F1000545E4 /* Assets.xcassets */,
 				DDA98EFD298BA7F1000545E4 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA98EFA298BA7EA000545E4 /* ContentView.swift in Sources */,
+				DDA98F0A298D12E7000545E4 /* AddressView.swift in Sources */,
+				DDA98F08298D0A0D000545E4 /* Order.swift in Sources */,
 				DDA98EF8298BA7EA000545E4 /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
