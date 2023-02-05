@@ -9,7 +9,7 @@ import SwiftUI
 
 class Order: ObservableObject, Codable {
     enum CodingKeys: CodingKey {
-        case type, quantity, extraFrosting, addSpinkles, name, streetAddress, city, zip
+        case type, quantity, extraFrosting, addSpinkles, name, streetAddress, city, zip, state
     }
     
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
@@ -31,10 +31,11 @@ class Order: ObservableObject, Codable {
     @Published var name = ""
     @Published var streetAddress = ""
     @Published var city = ""
+    @Published var state = ""
     @Published var zip = ""
     
     var hasValidAdress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty || zip.count < 5 {
             return false
         }
         
@@ -63,6 +64,7 @@ class Order: ObservableObject, Codable {
         try container.encode(name, forKey: .name)
         try container.encode(streetAddress, forKey: .streetAddress)
         try container.encode(city, forKey: .city)
+        try container.encode(state, forKey: .state)
         try container.encode(zip, forKey: .zip)
     }
     
@@ -79,6 +81,7 @@ class Order: ObservableObject, Codable {
         streetAddress = try container.decode(String.self, forKey: .streetAddress)
         city = try container.decode(String.self, forKey: .city)
         zip = try container.decode(String.self, forKey: .zip)
+        state = try container.decode(String.self, forKey: .state)
     }
 }
 

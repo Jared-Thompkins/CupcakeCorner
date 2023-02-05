@@ -12,33 +12,37 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    Picker("Select your cake type", selection: $order.type) {
-                        ForEach(Order.types.indices) {
-                            Text(Order.types[$0])
+            VStack {
+                Form {
+                    Section {
+                        Picker("Select your cake type", selection: $order.type) {
+                            ForEach(Order.types.indices) {
+                                Text(Order.types[$0])
+                            }
+                        }
+                        
+                        Stepper("Cakes: \(order.quantity) ($2.00 / Cake)", value: $order.quantity, in: 0...20)
+                    }
+                    
+                    Section {
+                        Toggle("Any special requests?", isOn: $order.specialRequestEnabled.animation())
+                        
+                        if order.specialRequestEnabled {
+                            Toggle("Add extra frosting (+$1.00)", isOn: $order.extraFrosting)
+                            Toggle("Add extra sprinkles (+$1.00)", isOn: $order.addSprinkles)
                         }
                     }
                     
-                    Stepper("Cakes: \(order.quantity)", value: $order.quantity, in: 0...20)
-                }
-                
-                Section {
-                    Toggle("Any special requests?", isOn: $order.specialRequestEnabled.animation())
+                    Section {
+                        NavigationLink {
+                            AddressView(order: order)
+                        } label: {
+                            Text("Delivery details")
+                        }
+                    }
                     
-                    if order.specialRequestEnabled {
-                        Toggle("Add extra frosting", isOn: $order.extraFrosting)
-                        Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
-                    }
                 }
-                
-                Section {
-                    NavigationLink {
-                        AddressView(order: order)
-                    } label: {
-                        Text("Delivery details")
-                    }
-                }
+                Text("Order Total: \(order.cost, format: .currency(code: "USD"))")
             }
             .navigationTitle("Cupcake Corner")
         }
